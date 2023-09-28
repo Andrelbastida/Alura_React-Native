@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Cadastro from './src/Cadastro';
+import {NativeBaseProvider, StatusBar} from 'native-base';
+
+import {TEMAS} from './src/estilos/temas'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Olá Mundo !!!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider theme={TEMAS}>
+      <StatusBar backgroundColor={TEMAS.colors.blue[800]}/>
+      <Cadastro />
+    </NativeBaseProvider>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
